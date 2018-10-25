@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AlfarBackendChallenge.WebAPI.Models
 {
+    /// <summary>
+    /// Models for mapping request objects
+    /// </summary>
     public class AddressRequestModel
     {
         public Guid Id { get; set; }

@@ -11,8 +11,8 @@ using System.Linq;
 
 namespace AlfarBackendChallenge.Services
 {
-    
-      /// <summary>
+
+    /// <summary>
     /// Address CRUD Operations
     /// </summary>
     public class AddressService : IAddressService
@@ -33,6 +33,9 @@ namespace AlfarBackendChallenge.Services
                 throw new Exception(ex.ToString());
             }
         }
+        /// <summary>
+        /// Read operations  using Stored Procedure with EF
+        /// </summary>
         public IList<Address> GetAll()
         {
             try
@@ -95,6 +98,10 @@ namespace AlfarBackendChallenge.Services
 
             }
         }
+        
+        /// <summary>
+        /// Execute sql commands
+        /// </summary>
         private List<Address> GetRecordsFromDB(SqlCommand sqlCommand)
         {
             try

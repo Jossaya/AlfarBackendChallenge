@@ -10,6 +10,10 @@ using System.Web.Mvc;
 
 namespace AlfarBackendChallenge.Web.Controllers
 {
+
+    /// <summary>
+    /// MVC Controller for handling app routing and requests,
+    /// </summary>
     public class HomeController : Controller
     {
         public readonly IAddressService _addressService;
@@ -47,13 +51,13 @@ namespace AlfarBackendChallenge.Web.Controllers
                     Name = adressViewModel.Name,
                     PostalCode = adressViewModel.PostalCode,
                     Region = adressViewModel.Region,
-                    Id=Guid.NewGuid ()
+                    Id = Guid.NewGuid()
                 };
                 address = _addressService.InsertAddress(address);
                 if (address != null)
                 {
-                     string displayMessage = "ADDRESSS SUCCESSFULLY CREATED";
-                      TempData["_ViewSuccessMessage"] = displayMessage;
+                    string displayMessage = "ADDRESSS SUCCESSFULLY CREATED";
+                    TempData["_ViewSuccessMessage"] = displayMessage;
 
                 }
 
@@ -119,8 +123,8 @@ namespace AlfarBackendChallenge.Web.Controllers
                     {
                         string stateInfo = httpResponseMessage.Content.ReadAsStringAsync().Result;
                     }
-                     string displayMessage = "CUSTOMER SUCCESSFULLY CREATED";
-                      TempData["_ViewSuccessMessage"] = displayMessage;
+                    string displayMessage = "CUSTOMER SUCCESSFULLY CREATED";
+                    TempData["_ViewSuccessMessage"] = displayMessage;
                 }
 
                 return RedirectToAction("NewCustomer");

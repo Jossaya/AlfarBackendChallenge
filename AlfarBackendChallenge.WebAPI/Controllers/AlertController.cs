@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using AlfarBackendChallenge.WebAPI.Models;
 using System.Net;
-using System.Net.Mail;
-using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
-using AfricasTalkingCS;
-using AlfarBackendChallenge.WebAPI.Models;
 
 namespace AlfarBackendChallenge.WebAPI.Controllers
 {
     public class AlertController : ApiController
     {
-       
+        /// <summary>
+        /// Web API Controller for handling alerts requests from MVC app,
+        /// </summary>
         public ActionResult SendAlert(CustomerRequestModel model)
         {
             Utility utility = new Utility();
@@ -22,9 +17,9 @@ namespace AlfarBackendChallenge.WebAPI.Controllers
             var resultSendEmail = utility.SendEmail(model);
             if (resultSendSms == HttpStatusCode.OK && resultSendEmail.Result == HttpStatusCode.OK)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.OK); 
-           }
-            return new HttpStatusCodeResult(HttpStatusCode.InternalServerError); 
+                return new HttpStatusCodeResult(HttpStatusCode.OK);
+            }
+            return new HttpStatusCodeResult(HttpStatusCode.InternalServerError);
         }
 
     }
