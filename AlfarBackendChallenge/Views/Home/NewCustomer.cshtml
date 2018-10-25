@@ -1,0 +1,140 @@
+﻿@model AlfarBackendChallenge.Web.ViewModels.CustomerViewModel
+
+@{
+    ViewBag.Title = "New Customer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+
+        <div class="container">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td colspan="1">
+                            @using (Html.BeginForm("NewCustomer", "Home", FormMethod.Post, new { autocomplete = "off", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                            <fieldset>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Title</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                            @Html.TextBoxFor(p => p.Title,
+                                                new
+                                                {
+                                                    @class = "form-control",
+                                                    @required = "required"
+                                                })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Full Name</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                            @Html.TextBoxFor(p => p.Name,
+                                                new
+                                                {
+                                                    @class = "form-control",
+                                                    @required = "required"
+                                                })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Preferred Name</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+
+                                            @Html.TextBoxFor(p => p.PreferredName,
+                                                new
+                                                {
+                                                    @class = "form-control",
+                                                    @required = "required"
+                                                })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Email Address</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                            @Html.TextBoxFor(p => p.EmailAddress,
+                                                new
+                                                {
+                                                    @class = "form-control",
+                                                    @required = "required",
+                                                    type="Email"
+                                                })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Job Title</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                            @Html.TextBoxFor(p => p.JobTitle,
+                                                new
+                                                {
+                                                    @class = "form-control",
+                                                    @required = "required"
+                                                })
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Address</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
+
+                                            @Html.DropDownListFor(
+                                            x => x.AddressId,
+
+                                            new SelectList(Model.Addresses, "Id", "Name"),
+                                            "-- select Address--",
+                                            new
+                                            {
+                                                @class = "form-control selectpicker",
+                                                required = "required",
+                                                data_show_subtext = "true",
+                                                data_live_search = "true",
+                                            }
+                                            )
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                                <div class="form-group">
+
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <input type="submit" class="btn btn-primary" value="Submit" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                            }
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+</div>
+

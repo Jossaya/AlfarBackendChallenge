@@ -1,0 +1,42 @@
+﻿@if (TempData["_ViewErrorMessage"] != null)
+{
+
+    <div class="alert alert-danger display-hide" style="display: block;">
+        <button class="close" data-close="alert"></button> 
+        @TempData["_ViewErrorMessage"]
+
+    </div>
+
+}
+
+@if (TempData["_ViewInfoMessage"] != null)
+{
+    
+    
+    <div class="alert alert-info display-hide" style="display: block;">
+        <button class="close" data-close="alert"></button> 
+        @TempData["_ViewInfoMessage"]
+    </div>
+}
+
+
+@if (TempData["_ViewSuccessMessage"] != null)
+{
+  
+  
+    <div class="alert alert-success display-hide" style="display: block;">
+        <button class="close" data-close="alert"></button> 
+        @TempData["_ViewSuccessMessage"]
+    </div>
+}
+
+
+@if (TempData["_ViewWarningMessage"] != null)
+{
+
+   
+    <div class="alert alert-warning display-hide" style="display: block;">
+        <button class="close" data-close="alert"></button> 
+        @TempData["_ViewWarningMessage"]
+    </div>
+}

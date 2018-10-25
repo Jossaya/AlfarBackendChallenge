@@ -1,0 +1,130 @@
+﻿@model AlfarBackendChallenge.Web.ViewModels.AddressViewModel
+
+@{
+    ViewBag.Title = "New Customer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+
+        <div class="container">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <td colspan="1">
+                            @using (Html.BeginForm("NewAddress", "Home", FormMethod.Post, new { autocomplete = "off", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+                            <fieldset>
+
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Name</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                            @Html.TextBoxFor(p => p.Name,
+                                                new
+                                                {
+                                                    @class = "form-control",
+                                                    @required = "required"
+                                                })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Line 1</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+                                            @Html.TextBoxFor(p => p.Line1,
+                                                new
+                                                {
+                                                    @class = "form-control",
+                                                    @required = "required"
+                                                })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Line 2</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+
+                                            @Html.TextBoxFor(p => p.Line2,
+                                                new
+                                                {
+                                                    @class = "form-control",
+                                                    @required = "required"
+                                                })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">City</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                            @Html.TextBoxFor(p => p.City,
+                                                new
+                                                {
+                                                    @class = "form-control",
+                                                    @required = "required"
+                                                })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Postal Code</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                            @Html.TextBoxFor(p => p.PostalCode,
+                                                new
+                                                {
+                                                    @class = "form-control",
+                                                    @required = "required"
+                                                })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label">Country</label>
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                            @Html.TextBoxFor(p => p.Country,
+                                                new
+                                                {
+                                                    @class = "form-control",
+                                                    @required = "required"
+                                                })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <div class="col-md-8 inputGroupContainer">
+                                        <input type="submit" class="btn btn-primary" value="Submit" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                            }
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+</div>
+
